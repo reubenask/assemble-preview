@@ -35,10 +35,73 @@
 @media(max-width:420px){.hero-copy h1{font-size:59px}.hero-art{height:450px}.hero-step{right:9%;gap:8px}.hero-step strong,.step-number,.hero-step button{font-size:12px}.hero-step button span{margin-left:4px}.studio-top #howItWorks{display:none}}
 @media(min-width:801px){.landing-hero{min-height:600px}.hero-art{top:0}.hero-art>img{object-fit:contain;object-position:right center}.hero-step{top:46%;right:8%}}
 @media(min-width:801px){.hero-art>img{object-fit:cover;object-position:center bottom}.hero-step{right:13%}}
-@media(min-width:801px){.hero-art>img{object-fit:fill;object-position:center}.hero-step{right:9%}}
+
 
 .analysis-panel,.manual-chat{border-top:1px solid #d8d4cf;margin:28px 0;padding:24px 0;color:#333}.analysis-top{display:flex;justify-content:space-between;align-items:center;gap:15px}.analysis-top h3,.manual-chat h3{font-size:23px;font-weight:500;margin:0 0 10px}.analysis-top span{font-size:12px;color:#8b431d}.analysis-panel p,.analysis-panel label,.manual-chat p,.manual-chat label{font-size:14px;line-height:1.65}.analysis-panel textarea,.manual-chat textarea{display:block;box-sizing:border-box;width:100%;background:white;border:1px solid #c9c5bf;border-radius:8px;padding:13px;color:#222;font:inherit;margin:12px 0}.analysis-panel .studio-actions{margin-top:18px}.analysis-panel input{accent-color:#e85c24}#analysisQuestions{border-left:3px solid #e85c24;padding:5px 20px;margin-top:20px}#analysisStatus,#helpStatus{color:#86512d}#manualConversation p{white-space:pre-wrap;background:#f1eeea;padding:14px;border-radius:8px}#stepCheck{font-weight:600}.privacy-note{white-space:normal;max-width:190px}@media(max-width:600px){.analysis-top{align-items:start;flex-direction:column}.analysis-top h3{font-size:21px}}
 
 .analysis-panel label{letter-spacing:0;text-transform:none;color:#555;display:block;margin:12px 0}.analysis-panel #aiProvider{display:block;min-height:44px;max-width:100%;width:360px;padding:10px 12px;border:1px solid #c9c5bf;border-radius:7px;background:white;color:#333;font-size:14px}.analysis-panel .studio-actions{justify-content:flex-start}#autoAnalyze{margin-right:8px}
 
 .preview-notice{margin:0;padding:10px 6.5%;font:13px/1.5 Arial;background:#f5eadd;color:#704324}.studio-top #saveProject:not([hidden]){display:inline-block}.studio-top{flex-wrap:wrap;min-height:100px;height:auto;padding-top:22px;padding-bottom:22px}.studio-top nav{flex-wrap:wrap}.manual-chat label{color:#555;letter-spacing:0;text-transform:none}@media(max-width:520px){.studio-top nav{gap:12px}.studio-top nav #headerUpload{display:none}.studio-top #loadProject{display:inline-block}.studio-top nav button{font-size:11px}}
+
+/* Responsive hero: one proportional illustration, three deliberate compositions.
+   Bound the canvas on wide displays; never size the image's axes independently. */
+#studio .studio-top{max-width:1440px;margin-inline:auto;width:100%;min-height:96px;padding:22px 48px;box-sizing:border-box}
+#studio .preview-notice{padding:10px max(24px,calc((100% - 1344px)/2));text-align:center;font-size:12px}
+#landingView .landing-hero{box-sizing:border-box;display:grid;grid-template-columns:minmax(0,1.12fr) minmax(0,1fr);gap:24px;width:100%;max-width:1440px;margin-inline:auto;padding:24px 48px 48px;height:auto;min-height:0;max-height:none;align-items:center;overflow:visible}
+#landingView .hero-copy{padding:0;min-width:0;pointer-events:auto}
+#landingView .hero-copy h1{font-size:clamp(58px,7.2vw,104px);line-height:1;letter-spacing:-.065em;margin:0 0 28px}
+#landingView .hero-description{font-size:clamp(18px,1.8vw,25px);line-height:1.5;white-space:normal;max-width:570px;margin:0 0 36px;text-wrap:pretty}
+#landingView .hero-actions{display:flex;flex-direction:column;align-items:flex-start;gap:0;white-space:normal}
+#landingView .hero-upload{font-size:20px;padding:20px 26px;min-height:68px;border-radius:13px;gap:16px;justify-content:center;max-width:100%}
+#landingView .hero-upload svg{width:26px;height:26px;flex-shrink:0}
+#landingView .hero-file-note{position:static;margin:12px 0 0;font-size:14px;line-height:1.5;letter-spacing:0;color:#73716e}
+#landingView .hero-demo{font-size:16px;margin:32px 0 0;min-height:44px;gap:12px}
+#landingView .hero-art{position:relative;inset:auto;width:100%;max-width:490px;justify-self:end;height:auto;aspect-ratio:2/3;margin:0;pointer-events:none}
+#landingView .hero-art>img{display:block;width:100%;height:auto;aspect-ratio:2/3;object-fit:contain;object-position:center;mask-image:none;-webkit-mask-image:none;mix-blend-mode:multiply}
+#landingView .hero-step{position:absolute;inset:auto 0 42% auto;display:flex;align-items:center;gap:8px;white-space:nowrap;background:#faf9f7e8;padding:10px 12px;border-radius:8px;pointer-events:auto}
+#landingView .hero-step strong,#landingView .hero-step button,#landingView .step-number{font-size:13px;line-height:1.4}
+#landingView .hero-step button{min-height:44px;padding:8px 0 8px 10px;margin-left:0}
+#landingView .step-number:after{margin-left:4px}
+#landingView .how-section{box-sizing:border-box;max-width:1440px;margin:auto;padding:72px 48px;gap:64px}
+#landingView .landing-footer{box-sizing:border-box;max-width:1440px;margin:auto;padding:32px 48px}
+@media(min-width:700px) and (max-width:1099px){
+ #studio .studio-top{padding:20px 32px;min-height:88px}
+ #studio .studio-top nav{gap:24px}
+ #landingView .landing-hero{padding:28px 32px 44px;gap:12px;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr)}
+ #landingView .hero-copy h1{font-size:clamp(52px,7.2vw,76px);margin-bottom:22px}
+ #landingView .hero-description{font-size:18px;margin-bottom:28px;max-width:330px}
+ #landingView .hero-upload{font-size:17px;padding:17px 20px;min-height:60px;gap:12px}
+ #landingView .hero-step{right:0;bottom:38%;gap:6px;padding:8px}
+ #landingView .hero-step strong,#landingView .hero-step button,#landingView .step-number{font-size:11px}
+ #landingView .hero-step button span{display:none}
+ #landingView .how-section{padding:56px 32px;gap:32px}
+}
+@media(max-width:699px){
+ #studio .studio-top{padding:18px 24px;min-height:76px;gap:12px}
+ #studio #brandHome{font-size:26px}
+ #studio .studio-top nav{gap:16px}
+ #studio .studio-top nav button{font-size:13px;min-height:44px}
+ .assemble-home #howItWorks{display:none}
+ #studio .preview-notice{font-size:11px;padding:8px 20px}
+ #landingView .landing-hero{display:flex;flex-direction:column;padding:30px 24px 24px;gap:12px;align-items:center}
+ #landingView .hero-copy{width:100%;max-width:440px;text-align:center}
+ #landingView .hero-copy h1{font-size:clamp(48px,12.4vw,70px);line-height:1.02;margin:0 0 18px}
+ #landingView .hero-description{font-size:17px;line-height:1.5;max-width:310px;margin:0 auto 24px}
+ #landingView .hero-actions{align-items:center}
+ #landingView .hero-upload{font-size:17px;min-height:58px;padding:16px 22px;gap:12px;border-radius:12px}
+ #landingView .hero-upload svg{width:24px;height:24px}
+ #landingView .hero-file-note{margin-top:10px;font-size:12px}
+ #landingView .hero-demo{margin-top:12px;font-size:14px}
+ #landingView .hero-art{width:min(100%,260px);max-width:none;align-self:center;aspect-ratio:2/3}
+ #landingView .hero-step{bottom:38%;right:-12px;gap:6px;padding:6px 8px}
+ #landingView .hero-step strong,#landingView .hero-step button,#landingView .step-number{font-size:11px}
+ #landingView .hero-step button span{display:none}
+ #landingView .how-section{grid-template-columns:1fr;padding:44px 24px;gap:28px}
+ #landingView .how-heading h2{font-size:32px;margin:16px 0 0}
+ #landingView .landing-footer{padding:26px 24px;flex-wrap:wrap}
+ .workspace-heading{flex-wrap:wrap}.workspace-heading .privacy-note{max-width:none}
+}
+@media(prefers-reduced-motion:reduce){#studio{scroll-behavior:auto}}
+/* Landing navigation stays focused; project controls belong to the workspace. */
+.assemble-home #studio #loadProject{display:none}
+@media(max-width:699px){#landingView .hero-art{width:min(100%,230px)}}
