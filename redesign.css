@@ -105,3 +105,12 @@
 /* Landing navigation stays focused; project controls belong to the workspace. */
 .assemble-home #studio #loadProject{display:none}
 @media(max-width:699px){#landingView .hero-art{width:min(100%,230px)}}
+
+#studio .backend-settings,#studio #videoSettings,#studio .scene-tools{margin-top:1rem;padding-top:1rem;border-top:1px solid #bbb6aa}
+#studio .backend-settings summary,#studio .scene-tools summary{cursor:pointer;font-weight:600}
+#studio .backend-settings label,#studio #videoSettings>label{display:block;margin:.7rem 0}
+#studio .backend-settings input,#studio .scene-tools select,#studio #videoModel,#studio #playVariant,#studio #sourceChoice{max-width:100%;padding:.5rem;border:1px solid #a49e91;border-radius:.4rem;background:#fff;color:#26231d}
+#studio .scene-tools .studio-actions,#studio #videoSettings .studio-actions{justify-content:flex-start;margin:.6rem 0}
+#studio .scene-tools canvas{display:block;max-width:100%;max-height:360px;margin:.8rem 0;touch-action:none;cursor:crosshair;border:1px solid #afa99f}
+#studio .scene-tools p,#studio #mediaStatus{font-size:.9rem;line-height:1.5}
+#studio [hidden]{display:none!important}
